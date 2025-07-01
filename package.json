@@ -1,0 +1,12 @@
+{
+  "name": "eye-tracking-tool",
+  "version": "1.0.0",
+  "description": "Eye tracking web tool for UX/UI analysis",
+  "main": "index.html",
+  "scripts": {
+    "start": "http-server -c-1"
+  },
+  "dependencies": {
+    "http-server": "^14.1.1"
+  }
+}

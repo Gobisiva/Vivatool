@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eye Tracking UX Tool</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://webgazer.cs.brown.edu/webgazer.js"></script>
+</head>
+<body>
+    <!-- URL input -->
+    <div class="url-input">
+        <input type="text" id="urlInput" placeholder="Enter website URL">
+        <button onclick="loadURL()">Load</button>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls">
+        <h3>Eye Tracking UX Tool</h3>
+        
+        <div class="button-group">
+            <button onclick="startCalibration()" class="btn primary">Calibrate</button>
+            <button onclick="clearCanvas()" class="btn">Clear</button>
+            <button onclick="toggleDrawing()" class="btn">Pause/Resume</button>
+            <button onclick="exportGazeData()" class="btn primary">Export</button>
+        </div>
+        
+        <div class="control-section">
+            <div class="drawing-modes">
+                <button class="mode-button active" data-mode="stroke">Stroke</button>
+                <button class="mode-button" data-mode="line">Line</button>
+                <button class="mode-button" data-mode="particle">Particle</button>
+                <button class="mode-button" data-mode="pressure">Pressure</button>
+            </div>
+        </div>
+        
+        <div class="status-indicator">
+            <div class="status-dot"></div>
+            <span id="statusText">Ready</span>
+        </div>
+    </div>
+
+    <!-- Main content -->
+    <div id="mainContent">
+        <canvas id="sketchCanvas"></canvas>
+        <iframe id="siteFrame" sandbox="allow-same-origin allow-scripts"></iframe>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/drawing.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
